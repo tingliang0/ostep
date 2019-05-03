@@ -16,7 +16,7 @@ typedef struct __myret_t {
 void *mythread(void *arg) {
     myarg_t *args = (myarg_t *)arg;
     printf("%d %d\n", args->a, args->b);
-    myret_t oops;
+    myret_t oops;               /* ALLOCATED ON STACK: BAD! */
     oops.x = 1;
     oops.y = 2;
     return (void *)&oops;
