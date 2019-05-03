@@ -1,4 +1,4 @@
-all: t0 t1 create_and_join
+all: t0 t1 create_and_join create_and_join2 create_and_join_bad
 
 CFLAGS=-Wall -pthread
 
@@ -11,5 +11,11 @@ t1:
 create_and_join:
 	gcc -o create_and_join create_and_join.c $(CFLAGS)
 
+create_and_join2:
+	gcc -o create_and_join2 create_and_join2.c $(CFLAGS)
+
+create_and_join_bad:
+	gcc -o create_and_join_bad create_and_join_bad.c $(CFLAGS)
+
 clean:
-	rm -rf t0 t1 create_and_join
+	rm -rf t0 t1 create_and_join create_and_join2 create_and_join_bad
